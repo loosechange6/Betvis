@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-# --- Page Configuration & Branding ---
+# --- 1. Page Configuration (Must be first) ---
 st.set_page_config(
     page_title="Betvis | Market Scanner",
     page_icon="📉",
@@ -9,7 +9,17 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Custom CSS for Dark Grey & Neon Green Branding
+# --- 2. Hide Streamlit Branding (The Pro Look) ---
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
+# --- 3. Custom CSS for Dark Grey & Neon Green Branding ---
 st.markdown(
     """
     <style>
@@ -53,7 +63,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# --- DUMMY DATA (This will be replaced by your script later) ---
+# --- 4. DUMMY DATA (This will be replaced by your script later) ---
 today_steamers = [
     {
         "match": "ZED FC vs Smouha",
@@ -82,7 +92,7 @@ trap_data = {
 }
 
 
-# --- The Website Layout ---
+# --- 5. The Website Layout ---
 
 # Header
 st.title("📉 BETVIS")
